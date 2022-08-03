@@ -13,7 +13,15 @@ public class Main {
 
         user1.logIn();
 
-
+        // 1. Stwórz ręcznie obiekt Example
+        Example example = new Example();
+        // 2. Pobierz dane z bazy danych
+        String data = getData();
+        // 3. Sprawdź z której bazy są dane
+        example.checkData(data);
+        // Zmienna nazywa się data, ale może nazywać
+        // się inaczej - nie musi być taka sama nazwa jak argument w
+        // Example:linia 6
     }
 
     public static String checkPassword() {
@@ -21,6 +29,11 @@ public class Main {
         System.out.println("Podaj haslo:");
         String passwordForCheck = getPassword.nextLine();
         return passwordForCheck;
+    }
+
+    public static String getData() {
+        Database database = new Database();
+        return database.readDataFromDatabase("1");
     }
 }
 
