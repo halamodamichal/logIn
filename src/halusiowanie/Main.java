@@ -10,8 +10,16 @@ public class Main {
         User user2 = new User("Michal", "Laskowski", "michal23334@wp.pl", new PrivateData("dupa2", 4123, 26));
         User user3 = new User("Patrycja", "Konieczna", "patka222@gmail.com", new PrivateData("dupa3213123", 976, 140));
         String userPassword = checkPassword();
+        String userMail = checkMail();
+        user1.checkMail(userMail);
         user1.logIn(userPassword);
+    }
 
+    public static String checkMail() {
+        Scanner getMail = new Scanner(System.in);
+        System.out.println("Podaj adres e-mail:");
+        String userMail = getMail.nextLine();
+        return userMail;
     }
 
     public static String checkPassword() {
@@ -20,7 +28,6 @@ public class Main {
         String userPassword = getPassword.nextLine();
         return userPassword;
     }
-
 }
 
 

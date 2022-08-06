@@ -21,13 +21,21 @@ public class User {
 
     }
     //Metoda/funkcja
+
+    public void checkMail(String userMail) {
+        if (userMail.equals(this.mail)) {
+            System.out.println("Poprawny e-mail!");
+        } else {
+            System.out.println("Nie ma takiego użytkownika!");
+        }
+    }
+
     public void logIn(String userPassword) {
         if (Objects.equals(userPassword, privateData.password)) {
             System.out.println("Udało się zalogować!");
         } else {
             System.out.println("Hasło nie jest takie same, spróbuj ponownie później!");
         }
-
 
     }
 }
