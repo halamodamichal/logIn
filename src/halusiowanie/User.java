@@ -18,16 +18,17 @@ public class User {
         this.lastname = lastname;
         this.mail = mail;
         this.privateData = privateData;
+
     }
     //Metoda/funkcja
-    public void logIn() {
-        if (Objects.equals(this.privateData.password, Main.checkPassword())) {
-            System.out.println("Udało się zalogować, hasło poprawne!");
+    public void logIn(String userPassword) {
+        if (Objects.equals(userPassword, privateData.password)) {
+            System.out.println("Udało się zalogować!");
         } else {
-            System.out.println("Nie udało się zalogować, spróbuj ponownie później!");
+            System.out.println("Hasło nie jest takie same, spróbuj ponownie później!");
         }
-        //System.out.println(this.privateData.password);
-        //System.out.println(Main.checkPassword());
+
+
     }
 }
 
